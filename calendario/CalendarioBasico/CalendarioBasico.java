@@ -71,4 +71,29 @@ public class CalendarioBasico
         date = dayString + ("-") + monthString + ("-") + yearString;
         return date;
     }
+
+    /**
+     * Advance one day in the calendar
+     */
+    public void nextDay()
+    {
+        if (day == 30 & month == 12 & year == 99){
+            day = 1;
+            month = 1;
+            year = 1;
+        }
+        else if (day == 30 & month == 12){
+            day = 1;
+            month = 1;
+            year += 1;
+        }
+        else if (day == 30){
+            day = 1;
+            month += 1;
+        }
+        else{
+            day += 1;
+        }
+    }
+
 }
