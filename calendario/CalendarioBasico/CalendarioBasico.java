@@ -26,7 +26,7 @@ public class CalendarioBasico
      */
     public void setDate(int actualDay, int actualMonth, int actualYear)
     {
-        if (actualDay > 0 || actualMonth > 0 || actualYear >0){
+        if (actualDay > 0 & actualMonth > 0 & actualYear >0){
             day = actualDay;
             month = actualMonth;
             year = actualYear;
