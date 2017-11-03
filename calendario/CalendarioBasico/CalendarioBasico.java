@@ -4,32 +4,32 @@
  */
 public class CalendarioBasico
 {
-    // the day of the calendar
-    private int day;
-    // the month of the calendar
-    private int month;
-    // the year of the calendar
-    private int year;
+    // the dia of the calendar
+    private int dia;
+    // the mes of the calendar
+    private int mes;
+    // the ano of the calendar
+    private int ano;
 
     /**
      * Constructor for objects of class CalendarioBasico
      */
     public CalendarioBasico()
     {
-        day = 1;
-        month = 1;
-        year = 1;
+        dia = 1;
+        mes = 1;
+        ano = 1;
     }
 
     /**
      * Set the calendar date
      */
-    public void setDate(int actualDay, int actualMonth, int actualYear)
+    public void fijarFecha(int actualdia, int actualmes, int actualano)
     {
-        if (actualDay > 0 & actualMonth > 0 & actualYear >0){
-            day = actualDay;
-            month = actualMonth;
-            year = actualYear;
+        if (actualdia > 0 & actualmes > 0 & actualano >0){
+            dia = actualdia;
+            mes = actualmes;
+            ano = actualano;
         }
         else{
             System.out.println ("You have to input a correct date");
@@ -39,60 +39,49 @@ public class CalendarioBasico
     /**
      * Print calendar date
      */
-    public String printDate()
+    public String obtenerFecha()
     {
         String date;
-        String dayString;
-        String monthString;
-        String yearString;
-        dayString = String.valueOf(day);
-        monthString = String.valueOf(month);
-        yearString = String.valueOf(year);
-
-        if (dayString.length() == 1){
-            dayString = "0" + dayString.substring(0,1);
+        String diaString;
+        String mesString;
+        String anoString;
+        diaString = String.valueOf(dia);
+        mesString = String.valueOf(mes);
+        anoString = String.valueOf(ano);
+        if (diaString.length() == 1){
+            diaString = "0" + diaString;
         }
-        else{
-            dayString = dayString.substring(0);
+        if (mesString.length() == 1){
+            mesString = "0" + mesString;
         }
-        if (monthString.length() == 1){
-            monthString = "0" + monthString.substring(0,1);
+        if (anoString.length() == 1){
+            anoString = "0" + anoString;
         }
-        else{
-            monthString = monthString.substring(0);
-        }
-        if (yearString.length() == 1){
-            yearString = "0" + yearString.substring(0,1);
-        }
-        else{
-            yearString = yearString.substring(0);
-        }
-
-        date = dayString + ("-") + monthString + ("-") + yearString;
+        date = diaString + ("-") + mesString + ("-") + anoString;
         return date;
     }
 
     /**
-     * Advance one day in the calendar
+     * Advance one dia in the calendar
      */
-    public void nextDay()
+    public void avanzarFeha()
     {
-        if (day == 30 & month == 12 & year == 99){
-            day = 1;
-            month = 1;
-            year = 1;
+        if (dia == 30 & mes == 12 & ano == 99){
+            dia = 1;
+            mes = 1;
+            ano = 1;
         }
-        else if (day == 30 & month == 12){
-            day = 1;
-            month = 1;
-            year += 1;
+        else if (dia == 30 & mes == 12){
+            dia = 1;
+            mes = 1;
+            ano += 1;
         }
-        else if (day == 30){
-            day = 1;
-            month += 1;
+        else if (dia == 30){
+            dia = 1;
+            mes += 1;
         }
         else{
-            day += 1;
+            dia += 1;
         }
     }
 
@@ -102,33 +91,22 @@ public class CalendarioBasico
     public String getString()
     {
         String date;
-        String dayString;
-        String monthString;
-        String yearString;
-        dayString = String.valueOf(day);
-        monthString = String.valueOf(month);
-        yearString = String.valueOf(year);
-
-        if (dayString.length() == 1){
-            dayString = "0" + dayString.substring(0,1);
+        String diaString;
+        String mesString;
+        String anoString;
+        diaString = String.valueOf(dia);
+        mesString = String.valueOf(mes);
+        anoString = String.valueOf(ano);
+        if (diaString.length() == 1){
+            diaString = "0" + diaString;
         }
-        else{
-            dayString = dayString.substring(0);
+        if (mesString.length() == 1){
+            mesString = "0" + mesString;
         }
-        if (monthString.length() == 1){
-            monthString = "0" + monthString.substring(0,1);
+        if (anoString.length() == 1){
+            anoString = "0" + anoString;
         }
-        else{
-            monthString = monthString.substring(0);
-        }
-        if (yearString.length() == 1){
-            yearString = "0" + yearString.substring(0,1);
-        }
-        else{
-            yearString = yearString.substring(0);
-        }
-
-        date = dayString + ("-") + monthString + ("-") + ("20") + yearString;
+        date = diaString + ("-") + mesString + ("-") + ("20") + anoString;
         return date;
     }
 }
